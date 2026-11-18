@@ -42,6 +42,9 @@ func (c *fakeCC) Box() string                                               { re
 func (c *fakeCC) Instance() string                                          { return "" }
 func (c *fakeCC) Distros() []string                                         { return nil }
 func (c *fakeCC) AddBackground(int)                                         {}
+func (c *fakeCC) InvokeProvider(context.Context, string, string, string, []byte, []byte) ([]byte, error) {
+	return nil, nil
+}
 
 // TestUnixGroupVerb: getent group parsing. Relocated from charly/checkrun_verbs_test.go's
 // TestRunner_Group (#55 decoupling cone, Batch D).
